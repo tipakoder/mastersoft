@@ -1,0 +1,1 @@
+$('.slider').touchSlider({height: 400});
