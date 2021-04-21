@@ -60,7 +60,7 @@ return [
     [
         "url" => "/company/reviews/",
         "method" => "get",
-        "controller" => "main",
+        "controller" => "main", 
         "function" => "reviews_page"
     ],
 
