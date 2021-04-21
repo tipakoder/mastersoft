@@ -3,11 +3,11 @@
 return [
     [
         "url" => "/gitUpdate/",
-        "method" => "get",
+        "method" => "post",
         "controller" => "admin",
         "function" => "githubUpdate"
     ],
-    
+
     [
         "url" => "/",
         "method" => "get",
