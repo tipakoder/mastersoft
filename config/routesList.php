@@ -62,5 +62,12 @@ return [
         "method" => "get",
         "controller" => "main",
         "function" => "news_page"
+    ],
+
+    [
+        "url" => "/gitUpdate/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "githubUpdate"
     ]
 ];
