@@ -2,6 +2,13 @@
 
 return [
     [
+        "url" => "/gitUpdate/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "githubUpdate"
+    ],
+    
+    [
         "url" => "/",
         "method" => "get",
         "controller" => "main",
@@ -62,12 +69,5 @@ return [
         "method" => "get",
         "controller" => "main",
         "function" => "news_page"
-    ],
-
-    [
-        "url" => "/gitUpdate/",
-        "method" => "get",
-        "controller" => "admin",
-        "function" => "githubUpdate"
     ]
 ];

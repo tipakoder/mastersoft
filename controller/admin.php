@@ -1,5 +1,5 @@
 <?php
 
 function githubUpdate(){
-    exec(`git pull`);
+    @system(`git pull`);
 }
