@@ -285,4 +285,5 @@
 #reviews .content .item .text{
     width: 100%;
     color: #777;
+    white-space: break-spaces;
 }
