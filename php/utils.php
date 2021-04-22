@@ -11,8 +11,16 @@ function load_config($name){
 
 function load_page($route){
     $options = (isset($route['matches'])) ? [$route['matches']] : [];
-    require_once ROOTDIR."/controller/{$route["controller"]}.php";
-    call_user_func($route["function"], $options);
+    try{
+        require_once ROOTDIR."/controller/{$route["controller"]}.php";
+        if(is_callable($route["function"])){
+            call_user_func($route["function"], $options);
+        } else {
+            load_error(404, "Страница не найдена");
+        }
+    }catch(\Exception $e){
+        load_error(404, "Страница не найдена");
+    }
 }
 
 function load_view($view, $title, $params = [], $template = "template"){

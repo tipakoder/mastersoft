@@ -51,9 +51,20 @@ function contacts_page(){
 }
 
 function reviews_page(){
-    load_view("reviews", "MasterSOFT - Отзывы", ["SYS_OFF_CONTENT" => true]);
+    $reviews = dbQuery("SELECT * FROM reviews WHERE showing = 1");
+    load_view("reviews", "MasterSOFT - Отзывы", ["SYS_OFF_CONTENT" => true, "REVIEWS" => $reviews]);
 }
 
 function news_page(){
     load_view("news", "MasterSOFT - Новости", ["SYS_OFF_CONTENT" => true]);
+}
+
+function reviews_add(){
+    $name = verify_field("name", $_POST['name'], 4, 120);
+    $text = verify_field("text", $_POST['text'], 4, 600);
+
+    if( dbExecute("INSERT INTO reviews (name, text) VALUES ('{$name}', '{$text}')") ){
+        send_answer([], true);
+    }
+    send_answer("Error with write into base");
 }

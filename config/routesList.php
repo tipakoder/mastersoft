@@ -69,5 +69,51 @@ return [
         "method" => "get",
         "controller" => "main",
         "function" => "news_page"
+    ],
+
+    [
+        "url" => "/admin/auth/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "auth_page"
+    ],
+
+    [
+        "url" => "/admin/auth/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "auth_process"
+    ],
+
+    [
+        "url" => "/admin/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "dashboard_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/reviews/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "reviews_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/reviews/add/",
+        "method" => "post",
+        "controller" => "main",
+        "function" => "reviews_add",
+        "level_access" => 2
+    ],
+
+    [
+        "url" => "/admin/reviews/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "reviews_process",
+        "level_access" => 1
     ]
 ];

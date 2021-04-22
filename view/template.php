@@ -7,6 +7,7 @@
     <title><?=$SYS_TITLE?></title>
     <link rel="stylesheet" href="/view/res/css/animation.css">
     <link rel="stylesheet" href="/view/res/css/main.css">
+    <link rel="stylesheet" href="/view/res/css/template.css">
 </head>
 <body>
     <div class="popup-wrapper" id="popup-phone">

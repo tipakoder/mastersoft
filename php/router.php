@@ -10,7 +10,7 @@ function getRoute(){
     foreach($routesList as $route){
         preg_match("/".str_replace("/", ".", trim($route["url"], "/"))."/", $currentUrl, $matches, PREG_OFFSET_CAPTURE, 0);
 
-        if( ($route["url"] === $currentUrl || isset($matches[1]) ) && $route["method"] === $currentMethod){
+        if( (trim($route["url"], "/") === trim($currentUrl, "/") || isset($matches[1]) ) && $route["method"] === $currentMethod){
             if(isset($route["level_access"])){
                 if($route["level_access"] < $level_access){
                     load_error(401, "Доступ запрещён");
