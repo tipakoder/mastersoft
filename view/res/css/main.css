@@ -235,8 +235,16 @@ body{
     padding: 32px;
 }
 
+#main-wrapper section.plug{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
 #main-wrapper section.background{
     background-color: #3566c8;
+    color: #FFF;
 }
 
 #main-wrapper section .section-title{

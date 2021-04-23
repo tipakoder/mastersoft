@@ -1,3 +1,4 @@
+/* PRODUCTS */
 
 #products > .container.row{
     display: grid;
@@ -85,6 +86,8 @@
     width: 70%;
 }
 
+/* ADVANTAGES */
+
 #advantages .content{
     display: flex;
     justify-content: space-between;
@@ -110,6 +113,8 @@
     margin-bottom: 16px;
 }
 
+/* REVIEWS */
+
 #reviews .slider{
     height: 300px !important;
     display: flex;
@@ -122,6 +127,8 @@
     grid-gap: 32px;
     align-items: center;
 }
+
+/* NEWS */
 
 #news .content{
     display: grid;
@@ -275,6 +282,7 @@
     font-size: 22px;
     font-weight: 400;
     margin-bottom: 16px;
+    color: #000;
 }
 
 #reviews .content .item .fullname .date{
@@ -286,4 +294,21 @@
     width: 100%;
     color: #777;
     white-space: break-spaces;
+}
+
+/* NEWS VIEW */
+
+#news-view .image{
+    height: 300px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#news-view .date{
+    margin-top: 16px;
+    font-weight: 600;
+    color: #000;
 }

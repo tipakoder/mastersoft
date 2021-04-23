@@ -62,3 +62,52 @@ function reviews_process(){
 
     send_answer("Unknown error database writing");
 }
+
+function news_page(){
+    $news = dbQuery("SELECT * FROM news");
+    load_view("admin/news", "MasterSOFT - Модерация новостей", ["NEWS" => $news], "admin");
+}
+
+function news_new_page(){
+    load_view("admin/news_new", "MasterSOFT - Новая статья", [], "admin");
+}
+
+function news_new_process(){
+    $title = verify_field("title", $_POST['title'], 4, 120);
+    $text = verify_field("text", $_POST['text'], 4, 0);
+    $image = $_FILES['image'];
+    $path = "/content/image/".hash("sha256", time().strlen(basename($image['name']))).".jpg";
+    if (move_uploaded_file($image['tmp_name'], ROOTDIR.$path)) {
+        if(dbExecute("INSERT INTO news (title, text, image) VALUES ('{$title}', '{$text}', '{$path}')")){
+            send_answer([], true);
+        }
+        send_answer(["Unknown error with write to db"]);
+    }
+    send_answer(["Unknown upload image error"]);
+}
+
+function news_edit_page($matches){
+    $id = $matches[0][1][0];
+    if($query = dbQueryOne("SELECT * FROM news WHERE id = '{$id}'")){
+        load_view("admin/news_edit", "MasterSOFT - {$query['title']}", ["ARTICLE" => $query], "admin");
+    }
+}
+
+function news_edit_process($matches){
+    $id = $matches[0][1][0];
+    $title = verify_field("title", $_POST['title'], 4, 120);
+    $text = verify_field("text", $_POST['text'], 4, 0);
+    $sql_part = "UPDATE news SET title='{$title}', text='{$text}'";
+    $image = $_FILES['image'];
+    $path = "/content/image/".hash("sha256", time().strlen(basename($image['name']))).".jpg";
+    if (!move_uploaded_file($image['tmp_name'], ROOTDIR.$path) && $image != null) {
+        send_answer(["Unknown upload image error"]);
+    } else if($image != null){
+        $sql_part .= ", image='{$path}'";
+    }
+
+    if(dbExecute($sql_part." WHERE id='{$id}'")){
+        send_answer([], true);
+    }
+    send_answer(["Unknown error with write to db"]);
+}

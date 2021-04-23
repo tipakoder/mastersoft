@@ -12,7 +12,7 @@ function showPopupPhone(){
 }
 
 function hidePopupPhone(){
-    document.getElementById("popup-phone").style.display = "none";
+    try{document.getElementById("popup-phone").style.display = "none";}catch(e){}
 }
 
 function phone_send(){

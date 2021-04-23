@@ -12,7 +12,7 @@ function process_review(type, id){
         return res.json();
     }).then((res)=>{
         if(res?.type === "success"){
-            document.getElementById(id+"_review").remove();
+            location.reload();
         } else {
             alert(res.data);
         }

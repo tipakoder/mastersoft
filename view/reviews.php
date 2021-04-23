@@ -10,22 +10,24 @@
     </div>
 </section>
 
+<?php if($REVIEWS != null){ ?>
 <section id="reviews" class="background">
     <div class="container">
         <h3 class="section-title">Отзывы</h3>
         <div class="content">
-            <?php 
-            if($REVIEWS != null):
-            foreach($REVIEWS as $review): ?>
+            <?php foreach($REVIEWS as $review): ?>
             <div class="item">
                 <h4 class="fullname"><?=$review['name']?> <span class="date"><?=$review['date']?></span></h4>
                 <pre class="text"><?=$review['text']?></pre>
             </div>
-            <?php endforeach; 
-            endif;
-            ?>
+            <?php endforeach;  ?>
         </div>
     </div>
 </section>
+<?php }else{ ?>
+    <section id="reviews" class="background plug">
+        <h4 class="text">У нас пока нет отзывов :(</h4>
+    </section>
+<?php } ?>
 
 <script src="/view/res/js/reviews_user.js"></script>

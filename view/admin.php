@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/view/res/css/animation.css">
     <link rel="stylesheet" href="/view/res/css/main.css">
     <link rel="stylesheet" href="/view/res/css/admin.css">
+    <script src="/view/res/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
@@ -31,15 +32,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
-                            <a href="/admin/company/">О компании</a>
-                            <div class="sub-menu">
-                                <ul>
-                                    <li><a href="/admin/contacts/">Контакты</a></li>
-                                    <li><a href="/admin/reviews/">Отзывы</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        <li><a href="/admin/reviews/">Отзывы</a></li>
                         <li><a href="/admin/news/">Новости</a></li>
                     </ul>
                 </nav>
@@ -52,7 +45,6 @@
         <?php require_once "view/{$SYS_PAGE}.php"; ?>
 
     <script src="https://kit.fontawesome.com/79f16d32fa.js" crossorigin="anonymous"></script>
-    <script src="/view/res/js/jquery-3.3.1.min.js"></script>
     <script src="/view/res/js/jquery.touchSlider.js"></script>
     <script src="/view/res/js/main.js"></script>
 </body>

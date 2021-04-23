@@ -56,7 +56,8 @@ function reviews_page(){
 }
 
 function news_page(){
-    load_view("news", "MasterSOFT - Новости", ["SYS_OFF_CONTENT" => true]);
+    $NEWS = dbQuery("SELECT * FROM news");
+    load_view("news", "MasterSOFT - Новости", ["SYS_OFF_CONTENT" => true, "NEWS" => $NEWS]);
 }
 
 function reviews_add(){
@@ -67,4 +68,13 @@ function reviews_add(){
         send_answer([], true);
     }
     send_answer("Error with write into base");
+}
+
+function news_view_page($matches){
+    $id = $matches[0][1][0];
+    if($query = dbQueryOne("SELECT * FROM news WHERE id = '{$id}'")){
+        load_view("news_view", "MasterSOFT - {$query['title']}", ["ARTICLE" => $query, "SYS_OFF_CONTENT" => true]);
+        exit();
+    }
+    load_error(404, "Статьи не существует");
 }

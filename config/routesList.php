@@ -115,5 +115,53 @@ return [
         "controller" => "admin",
         "function" => "reviews_process",
         "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/news/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "news_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/news/new/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "news_new_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/news/new/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "news_new_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin.news.(\d+).edit/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "news_edit_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin.news.edit.(\d+).process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "news_edit_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/news.(\d+)/",
+        "method" => "get",
+        "controller" => "main",
+        "function" => "news_view_page",
+        "level_access" => 2
     ]
 ];

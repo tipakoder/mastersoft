@@ -1,3 +1,5 @@
+/* REVIEWS */
+
 #reviews .content{
     display: flex;
     flex-direction: column;
@@ -34,4 +36,65 @@
 
 #reviews .content .item .actions > button{
     width: 100%;
+}
+
+/* NEWS */
+
+#news .content{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 32% 32% 32%;
+}
+
+#news .content .item{
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.26);
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#news .content .item.new{
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    min-height: 200px;
+}
+
+#news .content .item .image{
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+#news .content .item .image .overlay{
+    background-color: #fff;
+    padding: 8px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+#news .content .item .title{
+    font-weight: 600;
+    padding: 16px;
+}
+
+/* NEW ARTICLE */
+
+#new-article .content > *{
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#new-article .content textarea{
+    resize: vertical;
+}
+
+#image_preview{
+    width: 100%;
+    background-color: #fff;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

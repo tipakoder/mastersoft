@@ -14,6 +14,7 @@ function send_review(){
     }).then((res)=>{
         if(res?.type === "success"){
             alert("Спасибо за Ваш отзыв!");
+            location.reload();
         } else {
             alert(res.data);
         }
