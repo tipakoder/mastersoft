@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 22 2021 г., 06:52
--- Версия сервера: 10.3.22-MariaDB
--- Версия PHP: 7.1.33
+-- Время создания: Апр 23 2021 г., 08:50
+-- Версия сервера: 10.3.13-MariaDB
+-- Версия PHP: 7.1.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -68,7 +69,8 @@ INSERT INTO `account_sessions` (`id`, `sessionkey`, `aid`, `ip`) VALUES
 (7, 'd81adf6aa876747ffaf253c69ed8bbfb2fe753c3ef3970884c855a00319709cf', 1, '127.0.0.1'),
 (8, 'fd97215bcc7ff9cc503127d3a6cbea5e5add21d13db00b2008f4e9366915914f', 1, '127.0.0.1'),
 (9, 'dbe4f26402fadacd079a40453722b0bb4dc4269bd0241538bf5d7e110ce1437c', 1, '127.0.0.1'),
-(10, '6094e80e2ec24841e14a080c73578f7940d24f971f10145e1e289064ab92a11c', 1, '127.0.0.1');
+(10, '6094e80e2ec24841e14a080c73578f7940d24f971f10145e1e289064ab92a11c', 1, '127.0.0.1'),
+(11, '820a6cbc08809aa9950ff60d05ac53bd9966f9b50fa0692c573ebcd3ff7ef501', 1, '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -111,6 +113,28 @@ CREATE TABLE `calls` (
 INSERT INTO `calls` (`id`, `name`, `tel`, `text`) VALUES
 (1, 'asdasd', 'asdasd', 'asdasd'),
 (2, 'Валерия', '898988989', 'Напиши, малыш! ');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `text` text NOT NULL,
+  `image` varchar(120) NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `text`, `image`, `date`) VALUES
+(1, 'Пожалуйста, пройдите к краю', 'фыпфжплофлдпфлдпфрп', '/content/image/56576d6cffe5bc5045360bb27ef8882c137ed2c3f08ae160429a02f6709308e0.jpg', '2021-04-23 10:43:29'),
+(2, 'Пожалуйста, пройдите к краю', 'фывыффывв', '/content/image/4ed554d17bb75a53705756cef8c6a8f41bb8e3fcc3563bcd926982a222028507.jpg', '2021-04-23 10:43:29');
 
 -- --------------------------------------------------------
 
@@ -173,8 +197,7 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `name`, `text`, `date`, `showing`) VALUES
-(6, 'Никита', '[object HTMLTextAreaElement]', '2021-04-22 08:47:37', 1),
-(7, 'Валерия', 'щпзахлщзхпокцзопзщцрпц4ушщцрущпрйпщрйзцщпзйцурпщйцхщпо', '2021-04-22 08:48:57', 1);
+(1, 'Данил', 'Ты хорош, ты просто лучший!', '2021-04-23 10:02:54', 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -202,6 +225,12 @@ ALTER TABLE `answers`
 -- Индексы таблицы `calls`
 --
 ALTER TABLE `calls`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `news`
+--
+ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -236,7 +265,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT для таблицы `account_sessions`
 --
 ALTER TABLE `account_sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `answers`
@@ -248,6 +277,12 @@ ALTER TABLE `answers`
 -- AUTO_INCREMENT для таблицы `calls`
 --
 ALTER TABLE `calls`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `news`
+--
+ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -266,7 +301,7 @@ ALTER TABLE `product_services`
 -- AUTO_INCREMENT для таблицы `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
