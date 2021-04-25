@@ -8,13 +8,13 @@
 
         <div class="block list">
             <?php foreach($PRODUCTS as $product): ?>
-                <div class="item">
+                <a class="item" href="/products/<?=$product['code_name']?>/">
                     <div class="image"><?=$product['icon']?></div>
                     <div class="content">
                         <h3 class="title"><?=$product['display_name']?></h3>
                         <p class="text"><?=$product['text']?></p>
                     </div>
-                </div>
+                </a>
             <?php endforeach; ?>
         </div>
     </div>

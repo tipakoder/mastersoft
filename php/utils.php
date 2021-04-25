@@ -32,7 +32,8 @@ function load_view($view, $title, $params = [], $template = "template"){
         "SYS_PAGE" => $view,
         "AUTH" => ($level_access < 2) ? true : false,
         "SYS_LEVELACCESS" => $level_access,
-        "PRODUCTS" => dbQuery("SELECT * FROM products")
+        "PRODUCTS" => dbQuery("SELECT * FROM products"),
+        "HOT_NEWS" => dbQuery("SELECT * FROM news ORDER BY id DESC LIMIT 3")
     ], $params);
 
     extract($extract);

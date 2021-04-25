@@ -144,35 +144,25 @@
                 </div>
             </div>
         </section>
-
+        
+        <?php if($HOT_NEWS != null): ?>
         <section id="news" class="background">
             <div class="container">
                 <div class="section-title">Новости</div>
                 <div class="content">
-                    <article class="item">
-                        <div class="image" style="background-image: url('/view/res/img/news/1.jpg');">
-                            <div class="overlay">15.03</div>
+                    <?php foreach($HOT_NEWS as $news): ?>
+                    <a class="item" href="/news/<?=$news['id']?>/">
+                        <div class="image" style="background-image: url('<?=$news['image']?>');">
+                            <div class="overlay"><?=$news['date']?></div>
                         </div>
-                        <div class="title">Конференция в ОГУ</div>
-                    </article>
-
-                    <article class="item">
-                        <div class="image" style="background-image: url('/view/res/img/news/2.jpg');">
-                            <div class="overlay">05.02</div>
-                        </div>
-                        <div class="title">XVI Конкурс "Правовая информация"</div>
-                    </article>
-
-                    <article class="item">
-                        <div class="image" style="background-image: url('/view/res/img/news/3.png');">
-                            <div class="overlay">10.12</div>
-                        </div>
-                        <div class="title">Интервью со студентом ОГАУ</div>
-                    </article>
+                        <div class="title"><?=$news['title']?></div>
+                    </a>
+                    <?php endforeach;?>
                 </div>
             </div>
         </section>
-        <?php endif; ?>
+        <?php endif;
+        endif; ?>
     </main>
 
     <footer id="footer-wrapper">
