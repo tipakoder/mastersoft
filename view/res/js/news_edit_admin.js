@@ -34,11 +34,32 @@ function send(id){
             alert(res.data);
         }
     }).catch((err)=>{
-        console.log(err)
+        console.log(err);
     });
 }
 
 $("form").submit(function(e){
     e.preventDefault();
     send(this.id);
+});
+
+$("#delete_article").click(function(e){
+    e.preventDefault();
+    let data = new FormData();
+    data.append("id", this.parentElement.id);
+
+    fetch("/admin/news/delete/process/", {
+        body: data,
+        method: "POST"
+    }).then(async(res) => {
+        return res.json();
+    }).then((res)=>{
+        if(res?.type === "success"){
+            location.href="/admin/news/";
+        } else {
+            alert(res.data);
+        }
+    }).catch((err)=>{
+        console.log(err);
+    });
 });

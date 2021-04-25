@@ -24,9 +24,10 @@ function load_page($route){
 }
 
 function load_view($view, $title, $params = [], $template = "template"){
-    global $level_access;
+    global $level_access, $currentUser;
 
     $extract = array_merge([
+        "SYS_CURRENTUSER" => $currentUser,
         "SYS_TITLE" => $title,
         "SYS_PAGE" => $view,
         "AUTH" => ($level_access < 2) ? true : false,

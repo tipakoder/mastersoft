@@ -8,6 +8,7 @@
             <input type="file" id="image_article">
             <div id="image_preview" style="background-image: url('<?=$ARTICLE['image']?>');"></div>
             <button class="btn">Опубликовать</button>
+            <button class="btn" id="delete_article">Удалить</button>
         </form>
     </div>
 </section>

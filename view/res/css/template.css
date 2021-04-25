@@ -140,6 +140,7 @@
     box-shadow: 0px 3px 5px rgba(0,0,0,0.26);
     background-color: #fff;
     cursor: pointer;
+    color: #000;
 }
 
 #news .content .item .image{
@@ -311,4 +312,8 @@
     margin-top: 16px;
     font-weight: 600;
     color: #000;
+}
+
+#news-view a{
+    color: #3566c8;
 }

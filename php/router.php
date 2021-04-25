@@ -8,7 +8,8 @@ function getRoute(){
     global $currentMethod, $currentUrl, $routesList, $level_access;
 
     foreach($routesList as $route){
-        preg_match("/".str_replace("/", ".", trim($route["url"], "/"))."/", $currentUrl, $matches, PREG_OFFSET_CAPTURE, 0);
+        $re = "/^".str_replace("/", ".", trim($route["url"], "/"))."$/";
+        preg_match($re, trim($currentUrl, "/"), $matches, PREG_OFFSET_CAPTURE, 0);
 
         if( (trim($route["url"], "/") === trim($currentUrl, "/") || isset($matches[1]) ) && $route["method"] === $currentMethod){
             if(isset($route["level_access"])){

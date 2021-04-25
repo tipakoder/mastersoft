@@ -16,8 +16,8 @@
         <div class="main">
             <div class="container">
                 <div class="logotype">
-                    <div class="symbol"><a href="/">МастерSOFT</a></div>
-                    <p class="text">Панель администратора</p>
+                    <div class="symbol"><a href="/admin/">МастерSOFT</a></div>
+                    <p class="text">Панель администратора<br><b>Вы авторизованы как <?=$SYS_CURRENTUSER['login']?></b></p>
                 </div>
 
                 <nav class="navigation">
@@ -32,6 +32,8 @@
                                 </ul>
                             </div>
                         </li>
+                        <li><a href="/admin/calls/">Звонки</a></li>
+                        <li><a href="/admin/advice/">Консультация</a></li>
                         <li><a href="/admin/reviews/">Отзывы</a></li>
                         <li><a href="/admin/news/">Новости</a></li>
                     </ul>

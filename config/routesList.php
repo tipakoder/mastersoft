@@ -158,10 +158,113 @@ return [
     ],
 
     [
+        "url" => "/admin/news/delete/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "news_delete_process",
+        "level_access" => 1
+    ],
+
+    [
         "url" => "/news.(\d+)/",
         "method" => "get",
         "controller" => "main",
         "function" => "news_view_page",
         "level_access" => 2
+    ],
+
+    [
+        "url" => "/admin/products/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "products_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/products/new/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "product_new_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/products/new/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "product_new_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/products/update/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "product_update_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/products/delete/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "product_delete_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin.products.(\w+)/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "product_edit_page"
+    ],
+
+    [
+        "url" => "/admin/products/service/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "product_edit_service_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/products/service/delete/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "product_delete_service_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/calls/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "call_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/calls/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "call_process",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/advice/",
+        "method" => "get",
+        "controller" => "admin",
+        "function" => "advice_page",
+        "level_access" => 1
+    ],
+
+    [
+        "url" => "/admin/advice/process/",
+        "method" => "post",
+        "controller" => "admin",
+        "function" => "advice_process",
+        "level_access" => 1
     ]
 ];

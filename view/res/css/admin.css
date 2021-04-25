@@ -98,3 +98,180 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* DASHBOARD */
+
+#dashboard .content{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 32% 32% 32%;
+}
+
+#dashboard .content .block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    background-color: #fff;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.26);
+    cursor: pointer;
+    transition: 0.3s box-shadow;
+}
+
+#dashboard .content .block:hover{
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.36);
+}
+
+#dashboard .content .block i{
+    margin-bottom: 16px;
+    font-size: 48px;
+}
+
+/* PRODUCTS */
+
+#products > .container.row{
+    display: grid;
+    grid-template-columns: 49.5% 49%;
+    grid-gap: 16px;
+}
+
+#products .block{
+    background-color: #fff;
+    padding: 16px;
+}
+
+#products .block .title{
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #000;
+    transition: 0.3s color;
+}
+
+#products .block .text{
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 16px;
+    transition: 0.3s color;
+}
+
+#products .header{
+    padding: 32px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.26);
+}
+
+#products .block.new{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+/* CALLS */
+
+#calls .content{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 16px;
+}
+
+#calls .content .row-call{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 24% 24% 24% 24%;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+/* ADVICE */
+
+#advice .content{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 16px;
+}
+
+#advice .content .row-call{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 19% 19% 19% 19% 19%;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+/* PRODUCT NEW */
+
+#product-new .block{
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.26);
+}
+
+#product-new .block.form{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+}
+
+#product-new .block.form > *{
+    width: 100%;
+}
+
+#product-new .block.services .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+#product-new .block.services .title button{
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#product-new .block.services .content{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 32% 32% 32%;
+}
+
+#product-new .block.services .content .item{
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+}
+
+#product-new .block.services .content .item input{
+    width: 100%;
+}
+
+#product-new .block.services .content .image_preview.noload::before{
+    content: "Загрузите фото";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+#product-new .block.services .content .image_preview{
+    border: 1px solid #eee;
+    border-radius: 4px;
+    position: relative;
+    height: 350px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
